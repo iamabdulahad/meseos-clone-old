@@ -42,7 +42,32 @@ function loaderAnimation(){
         opacity:0,
         ease:Power4
     })
+
+    tl.from(".hero h1, .hero h2",{
+        y:150,
+        stagger:0.1,
+    });
+
+    tl.from("#nav",{
+        opacity:0,
+    })
+}
+
+function cursorAnimation(){
+
+    Shery.makeMagnet("#nav-part2 h4, .menu-opener__square");
+
+    document.addEventListener("mousemove", function(dets){
+         gsap.from("#crsr",{
+            left:dets.x,
+            top:dets.y,
+         })
+    })
 }
 
 loaderAnimation();
+cursorAnimation();
+
+
+
 
