@@ -1,28 +1,25 @@
+const loader_h1 = document.querySelector(".loader h1");
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true,
-});
-
-
-
-
-function locomotiveAnimation() {
+function locoScroll() {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+    // for tablet smooth
+    tablet: { smooth: true },
 
-  
-  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+    // for mobile
+    smartphone: { smooth: true },
+  });
   locoScroll.on("scroll", ScrollTrigger.update);
 
-  // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy("#main", {
     scrollTop(value) {
       return arguments.length
         ? locoScroll.scrollTo(value, 0, 0)
         : locoScroll.scroll.instance.scroll.y;
-    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    },
     getBoundingClientRect() {
       return {
         top: 0,
@@ -31,375 +28,140 @@ function locomotiveAnimation() {
         height: window.innerHeight,
       };
     },
-    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-    pinType: document.querySelector("#main").style.transform
-      ? "transform"
-      : "fixed",
   });
 
-  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
-  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 }
 
-function loaderAnimation() {
-  var tl = gsap.timeline();
-
-  tl.from("#loader h1", {
-    y: 200,
-    stagger: 0.25,
-    duration: 0.6,
-    delay: 0.5,
-  });
-
-  tl.from("#line1-part1", {
-    opacity: 0,
-    onStart: function () {
-      var h5timer = document.querySelector("#line1-part1 h5");
-      var grow = 0;
-      setInterval(function () {
-        if (grow <= 100) {
-          h5timer.innerHTML = grow++;
-        }
-      }, 33);
-    },
-  });
-
-  tl.to(".line h2", {
-    animationName: "anime",
-    opacity: 1,
-  });
-
-  tl.to("#loader", {
-    opacity: 0,
-    duration: 0.2,
-    delay: 3.3,
-    display: "none",
-  });
-
-  tl.from("#page1", {
-    delay: 0.2,
-    y: 1600,
-    duration: 0.5,
-    opacity: 0,
-    ease: Power4,
-  });
-
-  tl.from(".hero h1, .hero h2", {
-    y: 150,
-    stagger: 0.1,
-  });
-
-  tl.from("#nav", {
-    opacity: 0,
-  });
-
-  tl.from(
-    "#hero1, #page2",
-    {
-      opacity: 0,
-    },
-    "-=1.2"
-  );
-}
-
-function cursorAnimation() {
-  if (
-    !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    Shery.makeMagnet("#nav-part2 h4");
-    Shery.makeMagnet(".menu-wrapper");
-  }
-
-  if (
-    !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    Shery.mouseFollower({
-      skew: true,
-      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-      duration: 1,
-    });
-  }
-}
-
-function sheryAnimation() {
-  if (
-    !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    //sheryjs ka code run karo eha par
-    Shery.imageEffect(".image-div", {
-      style: 5,
-      config: {
-        a: { value: 2, range: [0, 30] },
-        b: { value: 0.75, range: [-1, 1] },
-        zindex: { value: -9996999, range: [-9999999, 9999999] },
-        aspect: { value: 0.7241195453907675 },
-        gooey: { value: true },
-        infiniteGooey: { value: false },
-        growSize: { value: 4, range: [1, 15] },
-        durationOut: { value: 1, range: [0.1, 5] },
-        durationIn: { value: 1.5, range: [0.1, 5] },
-        displaceAmount: { value: 0.5 },
-        masker: { value: true },
-        maskVal: { value: 1.23, range: [1, 5] },
-        scrollType: { value: 0 },
-        geoVertex: { range: [1, 64], value: 1 },
-        noEffectGooey: { value: true },
-        onMouse: { value: 0 },
-        noise_speed: { value: 0.5, range: [0, 10] },
-        metaball: { value: 0.33, range: [0, 2] },
-        discard_threshold: { value: 0.5, range: [0, 1] },
-        antialias_threshold: { value: 0.01, range: [0, 0.1] },
-        noise_height: { value: 0.5, range: [0, 2] },
-        noise_scale: { value: 10, range: [0, 100] },
-      },
-      gooey: true,
-    });
-  }
-}
-
-function videocrsrAnimation() {
-  var videoContainer = document.querySelector("#video-container");
-  var video = document.querySelector("#video-container video");
-  var btnElement = document.querySelector(".video-crsr");
-
-  videoContainer.addEventListener("mouseenter", function () {
-    videoContainer.addEventListener("mousemove", function (dets) {
-      gsap.to(".mousefollower", {
-        opacity: 0,
+function LoaderAnimation() {
+  let count = 0;
+  const interval = setInterval(() => {
+    loader_h1.textContent = count;
+    if (count >= 100) {
+      clearInterval(interval);
+      gsap.to(".loader", {
+        y: "-100%",
+        display: "none",
+        duration: 0.6,
+        ease: "sine.inOut",
       });
-
-      gsap.to(btnElement, {
-        left: dets.x - 570,
-        top: dets.y - 250,
-      });
-    });
-
-    videoContainer.addEventListener("mouseleave", function () {
-      gsap.to(".mousefollower", {
-        opacity: 1,
-      });
-      gsap.to(btnElement, {
-        top: "-15%",
-        left: " 70%",
-      });
-    });
-  });
-
-  var flag = 0;
-  var videocrsr = document.querySelector(".video-crsr");
-  videoContainer.addEventListener("click", function () {
-    if (flag == 0) {
-      video.play();
-      video.style.opacity = "1";
-      gsap.to(".video-crsr", {
-        scale: 0.5,
-      });
-      videocrsr.innerHTML = `<i class="ri-pause-mini-fill"></i>`;
-      flag = 1;
-    } else {
-      video.pause();
-      video.style.opacity = "0";
-      gsap.to(".video-crsr", {
-        scale: 1,
-      });
-
-      videocrsr.innerHTML = `<i class="ri-play-mini-fill"></i>`;
-      flag = 0;
     }
+    count += 4;
+  }, 45);
+}
+
+function headerAnimation() {
+  gsap.from(".head", {
+    delay: 1.5,
+    staggar: 1,
+    y: "120",
+    duration: 0.7,
+    ease: "power.inOut",
   });
 }
 
-function flaganimation() {
-  document.addEventListener("mousemove", function (dets) {
-    gsap.to("#flag", {
-      x: dets.x,
-      y: dets.y,
-    });
-  });
-
-  document.querySelector("#hero3").addEventListener("mouseenter", function () {
-    gsap.to("#flag", {
-      opacity: 1,
-    });
-  });
-
-  document.querySelector("#hero3").addEventListener("mouseleave", function () {
-    gsap.to("#flag", {
-      opacity: 0,
+function mousefollower() {
+  window.addEventListener("mousemove", (dets) => {
+    gsap.to("#cursor", {
+      x: dets.clientX + "px",
+      y: dets.clientY + "px",
+      zIndex: 99,
+      duration: 0.5,
     });
   });
 }
 
-function footerAnimation() {
-  var clutter = "";
-  var clutter2 = "";
-  document
-    .querySelector("#footer h1")
-    .textContent.split("")
-    .forEach(function (elem) {
-      clutter += `<span>${elem}</span>`;
-    });
-  document.querySelector("#footer h1").innerHTML = clutter;
-  document
-    .querySelector("#footer h2")
-    .textContent.split("")
-    .forEach(function (elem) {
-      clutter2 += `<span>${elem}</span>`;
-    });
-  document.querySelector("#footer h2").innerHTML = clutter2;
+function DateAnimation() {
+  const year = "1898";
 
-  document
-    .querySelector("#text-container")
-    .addEventListener("mouseenter", function () {
-      gsap.to("#footer h1 span", {
-        opacity: 0,
-        stagger: 0.05,
-      });
-      gsap.to("#footer h2 span", {
-        delay: 0.35,
-        opacity: 1,
-        stagger: 0.1,
-      });
-    });
-  document
-    .querySelector("#text-container")
-    .addEventListener("mouseleave", function () {
-      gsap.to("#footer h1 span", {
-        opacity: 1,
-        stagger: 0.1,
-        delay: 0.35,
-      });
-      gsap.to("#footer h2 span", {
-        opacity: 0,
-        stagger: 0.05,
-      });
-    });
-}
-
-loaderAnimation();
-cursorAnimation();
-locomotiveAnimation();
-sheryAnimation();
-videocrsrAnimation();
-flaganimation();
-footerAnimation();
-
-function scrollAnimation() {
-  let x = gsap.timeline();
-
-  x.from("#page3 h1", {
-    opacity: 0,
-    y: 100,
+  gsap.to(".year_anim", {
+    y: function (index) {
+      return -parseInt(year[index], 10) + "em";
+    },
+    duration: 1.5,
+    stagger: 0.4,
     scrollTrigger: {
-      trigger: "#page3 h1",
+      scroller: "#main",
+      trigger: ".year_anim",
+      // markers: true,
+      start: "-34% 80%",
+    },
+  });
+}
+
+function heroSplitter() {
+  gsap.from(".hero_div img", {
+    scale: 2,
+    duration: 1,
+    scrollTrigger: {
+      scroller: "#main",
+      trigger: " .hero_div",
+      // markers: true,
+      start: "50% 85%",
+      end: "50% 50%",
+      scrub: 2,
+    },
+  });
+}
+
+function smallAnimation() {
+  gsap.to(".arrow", {
+    y: -24,
+    repeat: -1,
+    yoyo: true,
+    duration: 1,
+  });
+
+  gsap.to(".img-context > img", {
+    scale: 1.3,
+    duration: 1,
+    scrollTrigger: {
+      scroller: "#main",
+      trigger: ".img-context",
+      // markers: true,
+      start: "50% 85%",
+      end: "50% 50%",
+      scrub: 2,
+    },
+  });
+}
+
+function outro() {
+  gsap.to(".outro", {
+    clipPath:
+      "polygon(27.50% 25%, 72% 25%, 56% 56%, 56.05% 75%, 45% 75%, 45% 56%)",
+    scrollTrigger: {
+      trigger: ".outro",
       scroller: "#main",
       // markers: true,
-      start: "top 130%",
-      end: "top 40%",
-      scrub: 3,
+      start: "50% 85%",
+      end: "50% 70%",
+      scrub: true,
     },
   });
-  //   x.to("#page3 .underline", {
-  //      "--width": "100%",
-  //      scrollTrigger: {
-  //          trigger: "#page3 .underline",
-  //          scroller: "#main",
-  //          markers: true,
-  //          start: "top 75%",
-  //          end: "top 70%",
-  //          scrub: 3,
-  //      },
-  //  });
 
-  //  x.from("#page4-content h1", {
-  //   opacity: 0,
-  //   y: 200,
-  //   scrollTrigger: {
-  //       trigger: "#page4-content h1",
-  //       scroller: "#main",
-  //       // markers: true,
-  //       start: "top 130%",
-  //       end: "top 40%",
-  //       scrub: 3,
-  //   },
-  // })
-}
+  gsap.to(".outro img", {
+    scale: 1.1,
+    ease: "none",
+    top: "50px",
 
-scrollAnimation();
-
-// menu
-
-let isPaused = true;
-let isMenuOpen = false;
-function menuAnimation() {
-  const menuBtn = document.querySelector(".menu-wrapper");
-  const tlMenu = gsap.timeline({ paused: true });
-
-  tlMenu.to(".menu", {
-    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-  });
-
-  tlMenu.from(".menu-items h1", {
-    stagger: 0.05,
-    opacity: 0,
-    y: 100,
-  });
-
-  tlMenu.from(
-    ".menu .box-wrapper",
-    {
-      opacity: 0,
+    scrollTrigger: {
+      trigger: ".outro img",
+      scroller: "#main",
+      // markers: true,
+      start: "50% 85%",
+      end: "50% 70%",
+      scrub: true,
     },
-    "-=.5"
-  );
-
-  menuBtn.addEventListener("click", () => {
-    if (!isMenuOpen) {
-      console.log("menu open");
-      gsap.to("#video-container",
-        {
-            opacity: 0,
-        })
-      gsap.to(
-        ".menu-wrapper svg rect:nth-child(2), .menu-wrapper svg rect:nth-child(4), .menu-wrapper svg rect:nth-child(6), .menu-wrapper svg rect:nth-child(8)",
-        {
-          opacity: 0,
-          
-        }
-
-        
-      );
-
-      locoScroll.stop();
-      tlMenu.play();
-    } else {
-      console.log("menu close");
-      gsap.to("#video-container",
-        {
-            opacity: 1,
-        })
-      gsap.to(
-        ".menu-wrapper svg rect:nth-child(2), .menu-wrapper svg rect:nth-child(4), .menu-wrapper svg rect:nth-child(6), .menu-wrapper svg rect:nth-child(8)",
-        {
-          opacity: 1,
-        }
-      );
-
-      locoScroll.start();
-      tlMenu.reverse(0.5);
-    }
-
-    isMenuOpen = !isMenuOpen;
   });
 }
-
-menuAnimation();
+locoScroll();
+LoaderAnimation();
+headerAnimation();
+mousefollower();
+DateAnimation();
+heroSplitter();
+smallAnimation();
+outro();

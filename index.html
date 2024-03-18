@@ -3,397 +3,407 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon" />
-    <title>Obys Agency Clone</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.css" />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
 
-    <!-- Recommended -->
+    <title>Resurgence of the Homeland</title>
+    
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
-    <!-- <div id="crsr"></div> -->
-    <div id="loader">
-      <div class="line">
-        <div id="line1-part1">
-          <h5>00</h5>
-          <h6>- 100</h6>
-        </div>
-        <h1>your</h1>
-      </div>
-
-      <div class="line">
-        <h1>web experience</h1>
-      </div>
-
-      <div class="line">
-        <h1>is loading right</h1>
-        <h2>Now</h2>
-      </div>
+    <div class="w-screen h-screen bg-white z-[999] loader px-12 py-6 fixed top-0 left-0 flex items-end ">
+        <h1 class="text-[10vw] font-black">100</h1>
     </div>
-
-    <div id="main">
-      <div id="page1" data-scroll data-scroll-speed="-1.6">
-        <div id="nav">
-          <div id="left-nav">
-            <!-- <svg
-              class="menu-opener__square"
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-            >
-              <rect y="10" width="2" height="2" fill="currentColor"></rect>
-              <rect y="5" width="2" height="2" fill="currentColor"></rect>
-              <rect width="2" height="2" fill="currentColor"></rect>
-              <rect
-                x="5"
-                y="10"
-                width="2"
-                height="2"
-                fill="currentColor"
-              ></rect>
-              <rect x="5" y="5" width="2" height="2" fill="currentColor"></rect>
-              <rect x="5" width="2" height="2" fill="currentColor"></rect>
-              <rect
-                x="10"
-                y="10"
-                width="2"
-                height="2"
-                fill="currentColor"
-              ></rect>
-              <rect
-                x="10"
-                y="5"
-                width="2"
-                height="2"
-                fill="currentColor"
-              ></rect>
-              <rect x="10" width="2" height="2" fill="currentColor"></rect>
-            </svg>
-
-            <svg class="brand__svg" width="71" height="27" viewBox="0 0 71 27">
-              <path
-                d="M40.7622 24.5917C40.7622 23.6724 41.4511 22.9829 42.3697 22.9829C43.2883 22.9829 43.9773 23.6724 43.9773 24.5917C43.9773 25.511 43.2883 26.2005 42.3697 26.2005C41.566 26.2005 40.7622 25.3961 40.7622 24.5917Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M65.7937 8.96329C65.7937 8.04398 66.4826 7.35449 67.4012 7.35449C68.3198 7.35449 69.0087 8.04398 69.0087 8.96329C69.0087 9.88261 68.3198 10.5721 67.4012 10.5721C66.4826 10.5721 65.7937 9.88261 65.7937 8.96329Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M59.019 18.3861C59.019 17.4668 59.708 16.7773 60.6266 16.7773C61.5451 16.7773 62.2341 17.4668 62.2341 18.3861C62.2341 19.3055 61.5451 19.9949 60.6266 19.9949C59.8228 19.9949 59.019 19.3055 59.019 18.3861Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M41.3365 9.88276C40.5327 8.27396 39.6142 7.8143 39.04 7.58447H46.3887C45.9294 7.8143 45.0108 8.04413 45.0108 8.96344C45.0108 9.19327 45.1257 9.65293 45.3553 10.1126L48.3407 16.6627L46.5035 20.225L41.3365 9.88276Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M51.8998 9.30819C51.8998 8.04413 50.9812 7.69939 50.2922 7.58447H54.6555C53.8517 7.8143 52.8183 8.27396 51.7849 10.1126C51.8998 9.88276 51.8998 9.65293 51.8998 9.30819Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M66.7122 17.9266C66.7122 16.2029 65.2195 15.6283 63.0378 14.5941C60.8562 13.5599 59.019 12.7555 59.019 10.8019C59.019 8.73348 60.971 7.12468 64.1861 7.00977C63.1527 7.23959 62.3489 8.15891 62.3489 9.42296C62.3489 10.9168 63.612 11.4914 65.9084 12.5256C68.2049 13.5599 70.2717 14.4792 70.2717 16.6626C70.2717 19.1907 67.4011 20.3398 64.6454 20.4547C65.9084 20.2249 66.7122 19.1907 66.7122 17.9266Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M21.0129 2.64303C21.0129 1.6088 20.3239 0.919313 19.2905 0.689485L24.4576 0V20.3398C24.4576 20.3398 22.6204 20.4547 20.8981 21.8337V2.64303H21.0129Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M34.6764 14.0195C34.6764 10.4572 31.691 7.58432 27.9019 7.35449C30.1983 7.69923 30.8873 11.4914 30.8873 14.0195C30.8873 16.5476 30.1983 20.2249 27.9019 20.6845C31.8058 20.4547 34.6764 17.5819 34.6764 14.0195Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M14.9269 14.0195C14.9269 10.4572 11.9415 7.58432 8.15234 7.35449C10.4488 7.69923 11.1377 11.4914 11.1377 14.0195C11.1377 16.5476 10.4488 20.2249 8.15234 20.6845C11.9415 20.4547 14.9269 17.5819 14.9269 14.0195Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M0 14.0195C0 10.4572 2.9854 7.58432 6.77456 7.35449C4.4781 7.69923 3.78916 11.4914 3.78916 14.0195C3.78916 16.5476 4.4781 20.2249 6.77456 20.6845C2.9854 20.4547 0 17.5819 0 14.0195Z"
-                fill="currentColor"
-              ></path>
-            </svg> -->
-
-            <div class="svg-wrapper">
-              <div class="menu-wrapper">
-                  <svg class="menu-opener" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <rect y="10" width="2" height="2" fill="currentColor"></rect>
-                      <rect y="5" width="2" height="2" fill="currentColor"></rect>
-                      <rect width="2" height="2" fill="currentColor"></rect>
-                      <rect x="5" y="10" width="2" height="2" fill="currentColor"></rect>
-                      <rect x="5" y="5" width="2" height="2" fill="currentColor"></rect>
-                      <rect x="5" width="2" height="2" fill="currentColor"></rect>
-                      <rect x="10" y="10" width="2" height="2" fill="currentColor"></rect>
-                      <rect x="10" y="5" width="2" height="2" fill="currentColor"></rect>
-                      <rect x="10" width="2" height="2" fill="currentColor"></rect>
-                  </svg>
-              </div>
-              <svg class="brand__svg" width="71" height="27" viewBox="0 0 71 27">
-                  <path d="M40.7622 24.5917C40.7622 23.6724 41.4511 22.9829 42.3697 22.9829C43.2883 22.9829 43.9773 23.6724 43.9773 24.5917C43.9773 25.511 43.2883 26.2005 42.3697 26.2005C41.566 26.2005 40.7622 25.3961 40.7622 24.5917Z" fill="currentColor"></path>
-                  <path d="M65.7937 8.96329C65.7937 8.04398 66.4826 7.35449 67.4012 7.35449C68.3198 7.35449 69.0087 8.04398 69.0087 8.96329C69.0087 9.88261 68.3198 10.5721 67.4012 10.5721C66.4826 10.5721 65.7937 9.88261 65.7937 8.96329Z" fill="currentColor"></path>
-                  <path d="M59.019 18.3861C59.019 17.4668 59.708 16.7773 60.6266 16.7773C61.5451 16.7773 62.2341 17.4668 62.2341 18.3861C62.2341 19.3055 61.5451 19.9949 60.6266 19.9949C59.8228 19.9949 59.019 19.3055 59.019 18.3861Z" fill="currentColor"></path>
-                  <path d="M41.3365 9.88276C40.5327 8.27396 39.6142 7.8143 39.04 7.58447H46.3887C45.9294 7.8143 45.0108 8.04413 45.0108 8.96344C45.0108 9.19327 45.1257 9.65293 45.3553 10.1126L48.3407 16.6627L46.5035 20.225L41.3365 9.88276Z" fill="currentColor"></path>
-                  <path d="M51.8998 9.30819C51.8998 8.04413 50.9812 7.69939 50.2922 7.58447H54.6555C53.8517 7.8143 52.8183 8.27396 51.7849 10.1126C51.8998 9.88276 51.8998 9.65293 51.8998 9.30819Z" fill="currentColor"></path>
-                  <path d="M66.7122 17.9266C66.7122 16.2029 65.2195 15.6283 63.0378 14.5941C60.8562 13.5599 59.019 12.7555 59.019 10.8019C59.019 8.73348 60.971 7.12468 64.1861 7.00977C63.1527 7.23959 62.3489 8.15891 62.3489 9.42296C62.3489 10.9168 63.612 11.4914 65.9084 12.5256C68.2049 13.5599 70.2717 14.4792 70.2717 16.6626C70.2717 19.1907 67.4011 20.3398 64.6454 20.4547C65.9084 20.2249 66.7122 19.1907 66.7122 17.9266Z" fill="currentColor"></path>
-                  <path d="M21.0129 2.64303C21.0129 1.6088 20.3239 0.919313 19.2905 0.689485L24.4576 0V20.3398C24.4576 20.3398 22.6204 20.4547 20.8981 21.8337V2.64303H21.0129Z" fill="currentColor"></path>
-                  <path d="M34.6764 14.0195C34.6764 10.4572 31.691 7.58432 27.9019 7.35449C30.1983 7.69923 30.8873 11.4914 30.8873 14.0195C30.8873 16.5476 30.1983 20.2249 27.9019 20.6845C31.8058 20.4547 34.6764 17.5819 34.6764 14.0195Z" fill="currentColor"></path>
-                  <path d="M14.9269 14.0195C14.9269 10.4572 11.9415 7.58432 8.15234 7.35449C10.4488 7.69923 11.1377 11.4914 11.1377 14.0195C11.1377 16.5476 10.4488 20.2249 8.15234 20.6845C11.9415 20.4547 14.9269 17.5819 14.9269 14.0195Z" fill="currentColor"></path>
-                  <path d="M0 14.0195C0 10.4572 2.9854 7.58432 6.77456 7.35449C4.4781 7.69923 3.78916 11.4914 3.78916 14.0195C3.78916 16.5476 4.4781 20.2249 6.77456 20.6845C2.9854 20.4547 0 17.5819 0 14.0195Z" fill="currentColor"></path>
-              </svg>
-          </div>
-          </div>
-
-          <div id="nav-part2">
-            <h4>Works</h4>
-            <h4>About</h4>
-            <h4>Contacts</h4>
-          </div>
-
-<!-- menu -->
-<div class="menu">
-  <div class="menu-items">
-      <h1>Home</h1>
-      <h1>Works</h1>
-      <h1>About</h1>
-      <h1>Contact</h1>
-  </div>
-  <div class="box-wrapper">
-      <div class="box">
-          <h6>Socials</h6>
-          <a href="" data-title="Dribbble"><span class="special">Dribbble</span></a>
-          <a href="" data-title="Behance"><span class="special">Behance</span></a>
-          <a href="" data-title="Instagram"><span class="special">Instagram</span></a>
-          <a href="" data-title="Facebook"><span class="special">Facebook</span></a>
-          <a href="" data-title="Twitter"><span class="special">Twitter</span></a>
-          <a href="" data-title="Behance"><span class="special">YouTube</span></a>
-      </div>
-      <div class="box">
-          <h6>Address</h6>
-          <h5>Pushkinska 5 <br>61057 Kharkiv <br>Ukraine</h5>
-      </div>
-      <div class="box">
-          <h6>Say Hi!</h6>
-          <a href="" data-title="info@obys.agency"><span class="special special2">info@obys.agency</span></a>
-      </div>
-  </div>
-</div>
-
-
-<!-- menu closed -->
-
-
+    <div
+    id="cursor"
+    class="cursor w-4 h-4 rounded-full bg-zinc-100 fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+  ></div>
+    <div id="main" class="bg-[#171615] text-white">
+      <div
+        id="header"
+        class="w-full h-[55vh] bg-[#171615] text-white flex flex-col justify-between p-5"
+      >
+        <div id="nav" class="flex items-center justify-between relative w-full h-[2vw]">
+          <h1 class="text-lg">Museums for the 21st Century</h1>
+          <h1 class="text-lg">(Uruguay)</h1>
+          <h1 class="text-lg">(Juan Manuel Blanes)</h1>
         </div>
-        <div class="hero" id="hero1">
-          <h1>We design</h1>
-        </div>
-        <div class="hero" id="hero2">
-          <h1>Unique</h1>
-        </div>
-        <div class="hero" id="hero3">
-          <h2>Web/</h2>
-          <h2>Graphic</h2>
-        </div>
-        <div class="hero" id="hero4">
-          <h1>experience</h1>
-        </div>
-        <img id="flag" src="https://obys.agency/wp-content/uploads/2022/03/Flag.jpg" alt="">
-      </div>
-      <div id="page2" data-scroll data-scroll-speed="-0.5" >
-        <div id="video-container">
-          <div class="video-crsr">
-            <i class="ri-play-mini-fill"></i>
-          </div>
+        <div>
+            <div class="overflow-hidden">
+                <h1
+                class="text-[8.9vw] font-[600] uppercase tracking-tighter leading-[6vw] head"
+              >
+                resurgence of
+              </h1>
+            </div>
+            <div class="overflow-hidden">
+                <h1
+                class="text-[8.9vw] font-[600] uppercase tracking-tighter leading-[8.5vw] head"
+              >
+                the homeland
+              </h1>
+            </div>
          
-          <video
-           
-            loop
-            
-            src="https://obys.agency/wp-content/uploads/2022/11/Obys-Showreel-2022.mp4"
-          ></video>
+          
         </div>
       </div>
-      <div id="page3" data-scroll data-scroll-speed="-2.5">
-        <h1>OUR PROJECTS</h1>
-        <div class="underline"></div>
-            <div id="image-div-container">
-                <div class="image-div">
-                    <img src="./media/Olga_Prudka_1.png" alt="">
-                    <img src="./media/Olga_Prudka_2.png" alt="">   
-                </div>
+      <div id="hero" class="w-full h-[130vh]">
+        <!-- hero__img section ----------------- -->
 
-                <div class="image-div">
-                    <img src="./media/OCHI.png" alt="">
-                    <img src="./media/OCHI_2.png" alt="">   
-                </div>
-
-                <div class="page3-circle">
-                    <svg class="button__arrow" viewBox="0 0 91 118" fill="none">
-                        <path d="M15.2307 57.4152L15.9378 56.708L15.2307 56.0009L14.5236 56.708L15.2307 57.4152ZM34.9813 77.1658L34.2742 77.8729L35.9813 79.58L35.9813 77.1658L34.9813 77.1658ZM0.151478 72.4944L-0.555622 71.7873L-1.26273 72.4944L-0.555622 73.2015L0.151478 72.4944ZM45.29 117.633L44.5828 118.34L45.29 119.047L45.9971 118.34L45.29 117.633ZM60.3692 102.554L61.0763 103.261L61.7839 102.553L61.0758 101.846L60.3692 102.554ZM60.3685 102.553L59.6614 101.846L58.9538 102.553L59.6619 103.261L60.3685 102.553ZM90.427 72.4944L91.1341 73.2015L91.8412 72.4944L91.1341 71.7873L90.427 72.4944ZM75.3478 57.4152L76.0549 56.7081L75.3478 56.001L74.6407 56.7081L75.3478 57.4152ZM56.3065 76.4565L55.3065 76.4565L55.3065 78.8707L57.0136 77.1636L56.3065 76.4565ZM56.3065 0.120074L57.3065 0.120074L57.3065 -0.879926L56.3065 -0.879926L56.3065 0.120074ZM34.9813 0.120076L34.9813 -0.879924L33.9813 -0.879924L33.9813 0.120076L34.9813 0.120076ZM14.5236 58.1223L34.2742 77.8729L35.6884 76.4587L15.9378 56.708L14.5236 58.1223ZM0.858585 73.2015L15.9378 58.1223L14.5236 56.708L-0.555622 71.7873L0.858585 73.2015ZM45.9971 116.926L0.858585 71.7873L-0.555622 73.2015L44.5828 118.34L45.9971 116.926ZM59.662 101.846L44.5828 116.926L45.9971 118.34L61.0763 103.261L59.662 101.846ZM59.6619 103.261L59.6625 103.261L61.0758 101.846L61.0751 101.845L59.6619 103.261ZM61.0756 103.26L91.1341 73.2015L89.7199 71.7873L59.6614 101.846L61.0756 103.26ZM91.1341 71.7873L76.0549 56.7081L74.6407 58.1223L89.7199 73.2015L91.1341 71.7873ZM74.6407 56.7081L55.5994 75.7494L57.0136 77.1636L76.0549 58.1223L74.6407 56.7081ZM57.3065 76.4565L57.3065 0.120074L55.3065 0.120074L55.3065 76.4565L57.3065 76.4565ZM56.3065 -0.879926L34.9813 -0.879924L34.9813 1.12008L56.3065 1.12007L56.3065 -0.879926ZM33.9813 0.120076L33.9813 77.1658L35.9813 77.1658L35.9813 0.120076L33.9813 0.120076Z" fill="currentColor"></path></svg>
-
-                        <div class="circle-in">
-                            <p>We are thrilled to have you on board. We hove you enjoyed the projects ❤️</p>
-                        </div>
-                </div>
-                <div class="page3-circle2">
-                    <svg class="button__arrow" viewBox="0 0 91 118" fill="none">
-                        <path d="M15.2307 57.4152L15.9378 56.708L15.2307 56.0009L14.5236 56.708L15.2307 57.4152ZM34.9813 77.1658L34.2742 77.8729L35.9813 79.58L35.9813 77.1658L34.9813 77.1658ZM0.151478 72.4944L-0.555622 71.7873L-1.26273 72.4944L-0.555622 73.2015L0.151478 72.4944ZM45.29 117.633L44.5828 118.34L45.29 119.047L45.9971 118.34L45.29 117.633ZM60.3692 102.554L61.0763 103.261L61.7839 102.553L61.0758 101.846L60.3692 102.554ZM60.3685 102.553L59.6614 101.846L58.9538 102.553L59.6619 103.261L60.3685 102.553ZM90.427 72.4944L91.1341 73.2015L91.8412 72.4944L91.1341 71.7873L90.427 72.4944ZM75.3478 57.4152L76.0549 56.7081L75.3478 56.001L74.6407 56.7081L75.3478 57.4152ZM56.3065 76.4565L55.3065 76.4565L55.3065 78.8707L57.0136 77.1636L56.3065 76.4565ZM56.3065 0.120074L57.3065 0.120074L57.3065 -0.879926L56.3065 -0.879926L56.3065 0.120074ZM34.9813 0.120076L34.9813 -0.879924L33.9813 -0.879924L33.9813 0.120076L34.9813 0.120076ZM14.5236 58.1223L34.2742 77.8729L35.6884 76.4587L15.9378 56.708L14.5236 58.1223ZM0.858585 73.2015L15.9378 58.1223L14.5236 56.708L-0.555622 71.7873L0.858585 73.2015ZM45.9971 116.926L0.858585 71.7873L-0.555622 73.2015L44.5828 118.34L45.9971 116.926ZM59.662 101.846L44.5828 116.926L45.9971 118.34L61.0763 103.261L59.662 101.846ZM59.6619 103.261L59.6625 103.261L61.0758 101.846L61.0751 101.845L59.6619 103.261ZM61.0756 103.26L91.1341 73.2015L89.7199 71.7873L59.6614 101.846L61.0756 103.26ZM91.1341 71.7873L76.0549 56.7081L74.6407 58.1223L89.7199 73.2015L91.1341 71.7873ZM74.6407 56.7081L55.5994 75.7494L57.0136 77.1636L76.0549 58.1223L74.6407 56.7081ZM57.3065 76.4565L57.3065 0.120074L55.3065 0.120074L55.3065 76.4565L57.3065 76.4565ZM56.3065 -0.879926L34.9813 -0.879924L34.9813 1.12008L56.3065 1.12007L56.3065 -0.879926ZM33.9813 0.120076L33.9813 77.1658L35.9813 77.1658L35.9813 0.120076L33.9813 0.120076Z" fill="currentColor"></path></svg>
-                        <div class="circle-in-2">
-                            <p>it will make you WOW!😉</p>
-                        </div>
-                       
-                </div>
-
-                <div class="image-div" class="porche">
-                    <img src="./media/porsche.jpg" alt="">
-                    <img src="./media/Porche-small.jpg" alt="">   
-                </div>
-
-                <div class="image-div">
-                    <img src="./media/Laxer_1-2.png" alt="">
-                    <img src="./media/Laxer_img1-x2.png" alt="">   
-                </div>
-
-                <div class="image-div">
-                    <img src="./media/Éminente_First.png" alt="">
-                    <img src="./media/Éminente_Second.png" alt="">   
-                </div>
-
-                <div class="image-div">
-                    <img src="./media/Makhno_First.png" alt="">
-                    <img src="./media/Makhno_Hover.png" alt="">   
-                </div>
-            </div>
+        <div class="hero_div h-full relative overflow-hidden">
+          <img
+            src="https://museos.arteyeducacion.org/_vercel/image?url=assets%2Fresurgimiento-patria.p_t8GGPO.jpg&w=2048&q=100"
+            alt=""
+            class="hero___img w-full h-full object-cover object-center origin-[40%_50%]"
+          />
+          <div
+            class="hero_div --center w-full h-1/3 overflow-hidden absolute top-1/2 left-0 -translate-y-1/2"
+          >
+            <img
+              src="https://museos.arteyeducacion.org/_vercel/image?url=assets%2Fresurgimiento-patria.p_t8GGPO.jpg&w=2048&q=100"
+              alt=""
+              class="w-full h-full object-cover object-center origin-[80%_50%]"
+            />
+          </div>
+        </div>
       </div>
-      <div id="page4" data-scroll>
-        <div id="page4-content">
-          <h1>ABOUT OBYS</h1>
-          <div class="underline"></div>
-          <p>
-            Our agency is about people who love creating, designing and
-            developing wow projects. In the same time we are a boutique agency
-            that is more than the collective. We learn and grow, win and
-            celebrate together.
-          </p>
-          <div id="page4-flex">
-            <img src="https://obys.agency/wp-content/uploads/2020/07/content-image01.jpg" alt="">
-            <p>We are happy to present our new website and updated version of Obys agency. As before we are open for new projects worldwide!
-              <br> <br>
-                Would you like to have award winning site or unique branding style, please say hi to our manager  —<br>info@obys.agency.<br>
-                And we will help you with the pleasure.</p>
+
+      <!-- year anim ---- -->
+      <div class="year_div_container w-full flex items-end mb-32">
+        <div
+          class="flex flex-row w-fit h-[9em] text-[2vw] font-medium leading-none overflow-hidden"
+        >
+          <div
+            class="year_anim text-[10em] flex flex-col items-center tracking-tighter"
+          >
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
           </div>
-          <div id="page4-bluediv">
-            <div class="blue-content">
-                <h2>Awwwards x16
-                </h2>   <p>SOTM, SOTD and Honrable Mentions</p>
-            </div>
-
-            <div class="blue-content">
-                <h2>FWA x11</h2>   <p>FWA of The Day</p>
-            </div>
-
-            <div class="blue-content">
-                <h2>CSSDA x23</h2>   <p>WOTM, WOTD and UI, UX, Innovation</p>
-            </div>
-
-            <div class="blue-content">
-                <h2>Behance x25</h2>   <p>Interaction, Graphic Design</p>
-            </div>
-
-            <div class="blue-content">
-                <h2>The Very Best Of x7</h2>   <p>The Very Best Of, Best Of</p>
-            </div>
+          <div class="year_anim text-[10em] flex flex-col items-center">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
           </div>
-          <div class="underline"></div>
-          <h4>We work with</h4>
+          <div class="year_anim text-[10em] flex flex-col items-center">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+          </div>
+          <div class="year_anim text-[10em] flex flex-col items-center">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+          </div>
+        </div>
+        <h1 class="font-semibold text-3xl ml-16">(Date of artwork)</h1>
+      </div>
+
+      <div data-scroll class="intro w-full h-[50vh] py-20 p-5 relative">
+        <div class="w-full h-[30vh] flex relative">
+          <h1
+            data-scroll
+            data-scroll-speed="-2.8"
+            data-scroll-direction="vertical"
+            class="text-3xl w-1/2 absolute"
+          >
+            (0) Introduction
+          </h1>
+          <h1 class="w-1/2 left-[50%] top-[-32%] text-3xl absolute">
+            The title of the work itself speaks of a Resurgence of the Homeland,
+            a rebirth, but in this case, in a new form under a riverist national
+            state project, in contrast to the concept of a grand homeland
+            proclaimed by Artigas, under a federal, inclusive, and intercultural
+            model, representative of rights, territorial sovereignty, and
+            identity sovereignty. It also represents the people as a temporal
+            rather than spatial identity, a concept rooted in the indigenous
+            peoples such as the Charrúa and Guarani, from which he drew
+            inspiration. In this work filled with foundational images of the
+            nation, different layers of symbolism are present.
+          </h1>
+        </div>
+      </div>
+
+      <div class="voice_memo w-full h-[44vh] mt-48">
+        <div class="memo p-16 flex items-center justify-between">
+          <div class="flex gap-3 items-center">
+            <i class="ri-play-circle-fill text-7xl"></i>
+            <h1 class="text-5xl">ADULTS</h1>
+            <span class="text-xl mb-3">3:59 min.</span>
+          </div>
+          <div>
+            <h2 class="capitalize text-[1.3vw]">
+              patricia lannes, educator's voice
+            </h2>
+          </div>
+        </div>
+
+        <div class="memo p-16 flex items-center justify-between">
+          <div class="flex gap-3 items-center">
+            <i class="ri-play-circle-fill text-7xl"></i>
+            <h1 class="text-5xl">ADULTS</h1>
+            <span class="text-xl mb-3">5:48 min.</span>
+          </div>
+          <div>
+            <h2 class="capitalize text-[1.3vw]">
+              Monica Michelena, Charrua Rep.
+            </h2>
+          </div>
+        </div>
+
+        <div class="memo p-16 flex items-center justify-between">
+          <div class="flex gap-3 items-center">
+            <i class="ri-play-circle-fill text-7xl"></i>
+            <h1 class="text-5xl">CHILDREN</h1>
+            <span class="text-xl mb-3">1:16 min.</span>
+          </div>
+          <div>
+            <h2 class="text-[1.3vw]">
+              Mriana Valdes, Arte y Educacion's Voice
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="w-full h-[95vh] flex flex-col justify-top items-center pt-[6%]"
+      >
+        <span class="h-[15vh] w-[1px] bg-[#B1B1B0]"></span>
+        <h1 class="w-[22%] text-4xl mt-10">
+          In the following section, hold the cursor down to reveal the complete
+          work.
+        </h1>
+        <i class="ri-add-circle-fill text-5xl mt-10"></i>
+        <img class="mt-10" src="./touch.svg" alt="" />
+
+        <span class="h-[5vh] w-[1px] relative z-10 bg-[#B1B1B0] mt-10"></span>
+
+        <svg
+          class="arrow"
+          width="42"
+          height="107"
+          viewBox="0 0 30 127"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          data-astro-cid-w3ajiqzu=""
+        >
+          <defs data-astro-cid-w3ajiqzu="">
+            <mask id="arrowMask" data-astro-cid-w3ajiqzu="">
+              <rect
+                x="0"
+                y="0"
+                width="30"
+                height="127"
+                fill="white"
+                data-astro-cid-w3ajiqzu=""
+              ></rect>
+            </mask>
+          </defs>
+          <path
+            d="M15 126.536C15 77.3301 15 0.536132 15 0.536132M15 126.536C15 117.036 0.999999 112.536 0.999999 112.536M15 126.536C15 117.036 29 112.536 29 112.536"
+            stroke="#FAFAFA"
+            mask="url(#arrowMask)"
+            data-astro-cid-w3ajiqzu=""
+          ></path>
+        </svg>
+      </div>
+
+      <div class="w-full h-[100vh] relative main">
+        
+          <img class="w-full h-full z-[0]" src="./scan-image.webp" alt="Full Screen Image">
+          <!-- <div class="overlay w-full h-full bg-white absolute top-0 z-[1]"></div> -->
+          <div class="circle z-[2] w-10 h-10  absolute top-0 left-0 bg-transform"></div>
+      </div>
+
+      <div class="w-full h-[100vh] p-5 mt-32">
+        <div class="overflow-hidden">
+            <h1
+            class="text-[8.9vw] font-[600] uppercase tracking-tighter leading-none histo"
+          >
+            HISTORICA
+          </h1>
+        </div>
+        <div class="overflow-hidden ">
+            <h1
+            class="text-[8.9vw] font-[600] uppercase tracking-tighter leading-none histo"
+          >
+           CONTEXT
+          </h1>
         </div>
         
 
-      </div>
-      <div id="page5" data-scroll>
-             <div class="elem">
-                <h1>sport - technology - <span>fashion</span>-</h1>
-                <h1>sport - technology - <span>fashion</span>-</h1>
-             </div>
-             <div class="elem2">
-                <h1><span>beauty</span> - arhitechure - real estate-</h1>
-                <h1><span>beauty</span> - arhitechure - real estate-</h1>
-             </div>
-             <div class="elem">
-                <h1>science - partners - <span>travel</span>-</h1>
-                <h1>science - partners - <span>travel</span>-</h1>
-             </div>
-             <div class="elem2">
-                <h1><span>music</span> - hotels - automotive-</h1>
-                <h1><span>music</span> - hotels - automotive-</h1>
-             </div>
-      </div>
-      <div id="footer" data-scroll>
-        <div id="text-container">
-            <h1>Let's create</h1>
-            <h2>Let's create</h2>
-            <svg class="entry-title__arrow" viewBox="0 0 118 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M57.295 75.1963L56.5879 74.4892L55.8808 75.1963L56.5879 75.9034L57.295 75.1963ZM77.0457 55.4457L77.7528 56.1528L79.4599 54.4457L77.0457 54.4457L77.0457 55.4457ZM72.3742 90.2755L71.6671 90.9826L72.3742 91.6897L73.0813 90.9826L72.3742 90.2755ZM117.513 45.1371L118.22 45.8442L118.927 45.1371L118.22 44.4299L117.513 45.1371ZM102.433 30.0578L103.141 29.3507L102.433 28.6431L101.726 29.3512L102.433 30.0578ZM102.433 30.0585L101.726 30.7656L102.433 31.4732L103.14 30.7651L102.433 30.0585ZM72.3743 9.86531e-07L73.0814 -0.707106L72.3743 -1.41421L71.6672 -0.707106L72.3743 9.86531e-07ZM57.2951 15.0792L56.588 14.3721L55.8809 15.0792L56.588 15.7863L57.2951 15.0792ZM76.3363 34.1205L76.3363 35.1205L78.7506 35.1205L77.0434 33.4134L76.3363 34.1205ZM-4.50306e-05 34.1205L-4.50525e-05 33.1205L-1.00005 33.1205L-1.00005 34.1205L-4.50306e-05 34.1205ZM-4.45646e-05 55.4457L-1.00004 55.4457L-1.00004 56.4457L-4.45427e-05 56.4457L-4.45646e-05 55.4457ZM58.0021 75.9034L77.7528 56.1528L76.3385 54.7386L56.5879 74.4892L58.0021 75.9034ZM73.0813 89.5684L58.0021 74.4892L56.5879 75.9034L71.6671 90.9826L73.0813 89.5684ZM116.806 44.4299L71.6671 89.5684L73.0813 90.9826L118.22 45.8442L116.806 44.4299ZM101.726 30.765L116.806 45.8442L118.22 44.4299L103.141 29.3507L101.726 30.765ZM103.14 30.7651L103.141 30.7645L101.726 29.3512L101.725 29.3519L103.14 30.7651ZM103.14 29.3514L73.0814 -0.707106L71.6672 0.707108L101.726 30.7656L103.14 29.3514ZM71.6672 -0.707106L56.588 14.3721L58.0022 15.7863L73.0814 0.707108L71.6672 -0.707106ZM56.588 15.7863L75.6292 34.8276L77.0434 33.4134L58.0022 14.3721L56.588 15.7863ZM76.3363 33.1205L-4.50525e-05 33.1205L-4.50088e-05 35.1205L76.3363 35.1205L76.3363 33.1205ZM-1.00005 34.1205L-1.00004 55.4457L0.999955 55.4457L0.999955 34.1205L-1.00005 34.1205ZM-4.45427e-05 56.4457L77.0457 56.4457L77.0457 54.4457L-4.45864e-05 54.4457L-4.45427e-05 56.4457Z" fill="currentColor"></path></svg>
+        <div class="w-full h-[30vh] flex relative mt-[14%]">
+          <h1
+            data-scroll
+            data-scroll-speed="-3"
+            data-scroll-direction="vertical"
+            class="text-3xl w-1/2 absolute"
+          >
+            (5)
+          </h1>
+          <h1 class="w-1/2 left-[50%] top-[-51%] text-3xl absolute">
+            At the time of the arrival of the Spaniards in the Río de la Plata
+            in the 16th century, the Charrúas occupied the area between the
+            Paraná River and the Uruguay River. Later, persecuted in their
+            settlements in Santa Fe, they moved towards the Banda Oriental and
+            are associated with the tribes of present-day Uruguay. The Charrúa
+            were an ethnic group living on the northern bank of the Río de la
+            Plata. They were the indigenous people encountered by the first
+            European explorers in the region. The pressure of European
+            colonization made them migrate northward, away from the coasts.
+            During the colonial period, they merged with other indigenous
+            peoples comprising the Charrúa macro-ethnic group, with whom they
+            had a direct kinship, thus forming a single cultural unit.
+          </h1>
         </div>
-        <div class="underline"></div>
-             <div id="footer-div">
-                <div class="box">
-                    <h6>Socials</h6>
-                    <h3>Dribbble</h3>
-                    <h3>Behance</h3>
-                    <h3>Instagram</h3>
-                    <h3>Facebook</h3>
-                    <h3>Twitter</h3>
-                    <h3>YouTube</h3>
-                </div>
-                <div class="box">
-                    <h6>Address</h6>
-                    <h3>Pushkinska 5
-                        61057 Kharkiv
-                        Ukraine</h3>
-                </div>
-                <div class="box">
-                    <h6>Say Hi!</h6>
-                    <u><h3>info@obys.agency</h3></u>
-                </div>
-             </div>
-
-             <div class="underline"></div>
-             <h4 id="copyright">Obys Agency &copy; 2024</h4>
-       
-       
       </div>
+
+      <div data-scroll data-scroll-speed="0" class=" p-10 w-full h-[75vh] img-context overflow-hidden  ">
+        <img  class=" w-full h-full" src="./historical-context.webp" alt="">
+      </div>
+
+      <div class="videos w-full height-[70vh] p-10 mt-32">
+        <h1 class="text-3xl">(6) Realted videos</h1>
+        <div class="flex gap-3 mt-10 relative">
+            <img class="w-1/2 h-full"  src="https://i.ytimg.com/vi/gHEXk9WFXLM/maxresdefault.jpg">
+            </img>
+            <span
+              class="w-[3em] h-[3em] text-xl border-[1px] border-white rounded-full absolute flex items-center justify-center z-20 top-[50%] left-[23%] -translate-y-[57%]"
+              ><i class="ri-play-large-fill"></i
+            ></span>
+            <!-- <i class="ri-play-circle-line"></i> -->
+            <img class="w-1/2 h-full" src="https://i.ytimg.com/vi/aWdbqQ0xLs8/maxresdefault.jpg">
+            </img>
+            <span
+            class="w-[3em] h-[3em] text-xl border-[1px] border-white rounded-full absolute flex items-center justify-center z-20 top-[50%] right-[21%] -translate-y-[57%]
+            
+            "
+            ><i class="ri-play-large-fill"></i
+          ></span>
+            <!-- <i class="ri-play-circle-line"></i> -->
+        </div>
+
+      </div>
+
+     <div class="w-full h-[120vh] mt-32 p-5">
+        <h1 class="text-[8.9vw] font-[600] uppercase tracking-tighter leading-[8.5vw]">JUAN MANUEL<br> BLANES</h1>
+        <img class="w-[40vw] h-[45vw] relative left-[50%] -translate-x-[50%] mt-20" src="https://museos.arteyeducacion.org/_vercel/image?url=assets%2Fjuan-manuel-blanes.ZUljUEzx.jpg&w=1080&q=100" alt="">
+     </div>
+
+
+     <div data-scroll class="w-full h-[50vh] py-20 p-5 relative mt-32">
+        <div class="w-full h-[30vh] flex relative">
+          <h1
+            data-scroll
+            data-scroll-speed="-3"
+            data-scroll-direction="vertical"
+            class="text-3xl w-1/2 "
+          >
+          (7) Author
+          </h1>
+          <h1 class="w-1/2 left-[50%] top-[-32%] text-3xl">
+            (Montevideo, 1830 - Pisa, 1901) Uruguayan painter. In all his works, within the academicism of historical reconstructions and unlike European romantic painters, he sought intimate national values.
+            Considered one of the greatest artists of his country, Juan Manuel Blanes's academic work constitutes an important link between Uruguayan painting of the 19th century and that of the 20th century. Between 1860 and 1864, he studied in Paris, Rome, and Florence, acquiring a refined academic technique, primarily oriented towards naturalism.
+          </h1>
+        </div>
+      </div>
+
+
+
+      <div class="w-full h-[100vh] p-5 mt-32">
+        <h1
+          class="text-[8.9vw] font-[600] uppercase tracking-tighter leading-[8.5vw]"
+        >
+          OUR<br />INITIAIVE
+        </h1>
+
+        <div class="w-full h-[30vh] flex relative mt-[14%]">
+          <h1
+            data-scroll
+            data-scroll-speed="-3"
+            data-scroll-direction="vertical"
+            class="text-3xl w-1/2 absolute"
+          >
+            (8)
+          </h1>
+          <h1 class="w-1/2 left-[50%] top-[-51%] text-3xl absolute">
+            Our proposal aims to provide training to museum and art space agents across the country to approach works of art as generators of dialogues and debates situated in the here and now, and in connection with the reality of museum visitors.
+            For this, we rely on analysis, reflection, and dialogue from different contemporary, critical, and decolonial perspectives. We also draw support from various examples of mediation, different museum narratives, and trends in education linked to these. All of this with the primary goal of working practically on various strategies and methodologies to approach and empathize with audiences.
+          </h1>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="outro flex flex-col justify-center items-center">
+        <img class="w-[45vw] h-[65vh] bg-top relative" src="./outro.webp" alt="">
+      </div>
+      <h1 class="text-3xl relative left-1/2 -translate-x-[2%] -mt-20">Share</h1>
+      
+     
+
+
+
+      <footer class="w-full h-[10vh] flex items-center justify-between p-5 text-2xl">
+        <img src="https://museos.arteyeducacion.org/_vercel/image?url=assets%2Flogo-aye.br6DN3O0.svg&w=640&q=100" alt="">
+        <h1 class="ml-5">Made by ++hellohello</h1>
+        <div class="flex items-center gap-2">
+            <h1>Follow us</h1>
+            <i class="ri-instagram-line"></i>
+            <i class="ri-facebook-circle-line"></i>
+            <i class="ri-youtube-line"></i>
+        </div>
+
+      </footer>
+
+
+
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <!-- Three.js is needed for 3d Effects -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-
-<!-- ControlKit is needed for Debug Panel -->
-<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/sheryjs/dist/Shery.js"
-    ></script>
-    <!-- Recommended -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
